@@ -2,9 +2,20 @@
 .main {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  height: 100vh;
+  background-image: url("../public/background-images/backgroundMountain.jpg");
+  background-size: cover;
+  justify-content: flex-end;
+  padding: 5rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 100%;
-  width: 350px;
+  max-height: 320px;
+  width: 400px;
 }
 
 .line {
@@ -12,9 +23,9 @@
 }
 
 .btncont {
-width: 100%;
-display: flex;
-
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
 }
 
 /* Mobile */

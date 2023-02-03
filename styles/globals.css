@@ -1,4 +1,4 @@
-@import '../styles/variables.css';
+@import "../styles/variables.css";
 
 * {
   box-sizing: border-box;
@@ -8,12 +8,8 @@
 
 html {
   max-width: 100vw;
-  overflow-x: hidden;
-  background-image: url("../public/background-images/backgroundMountain.jpg");
-  width: 100%;
-  height: 100%;
-  background-size: cover;
   color: var(--primary-color);
+  font-family: "Open Sans", sans-serif;
 }
 
 button {
@@ -24,13 +20,54 @@ button {
   background-color: transparent;
   border-radius: 0.5rem;
   color: var(--primary-color);
+  z-index: 1;
+}
+
+button:hover {
+  background-color: var(--primary-color);
+  color: var(--quaternary-color);
 }
 
 hr {
-  border: 2px solid var(--secondary-color);
+  border: 0.1rem solid var(--secondary-color);
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+h1,
+h2,
+h3,
+p {
+  margin: 1.5rem 0;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.line {
+  width: 100%;
+  border: solid 2px var(--secondary-color);
+}
+
+.icon-cont {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+}
+
+.icon-cont.arrow {
+  bottom: 0;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.icon {
+  width: 4rem;
+  margin: 1rem;
 }
