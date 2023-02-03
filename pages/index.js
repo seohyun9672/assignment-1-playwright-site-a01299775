@@ -2,10 +2,14 @@ import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
 import Button from '../comps/Button/Button'
 import Head from 'next/head'
+import { useRouter } from "next/router";
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+
+  const router = useRouter();
+
   return (
     <>
       <Head>
@@ -14,19 +18,19 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <div>
-          <h1>An investment in knowledge pays the best interest.</h1>
-          <hr className={styles.line} />
-          <p>
-            Different than a college or university, the British Columbia Institute of Technology offers practical, flexible, applied education with instructors who have direct, hands-on experience in their field.
-          </p>
-        </div>
-        <div className={styles.btncont}>
-          <Button text='More About Us'></Button>
-          <Button text='Contact Us' />
-        </div>
-      </main>
+        <main className={styles.main}>
+          <div className={styles.content}>
+            <h1>An investment in knowledge pays the best interest.</h1>
+            <hr className={styles.line} />
+            <p>
+              Different than a college or university, the British Columbia Institute of Technology offers practical, flexible, applied education with instructors who have direct, hands-on experience in their field.
+            </p>
+          </div>
+          <div className={styles.btncont}>
+            <Button text='More About Us' handleClick={() => router.push("/about")} />
+            <Button text='Contact Us' handleClick={() => router.push("/contact")} />
+          </div>
+        </main>
     </>
   )
 }
