@@ -8,7 +8,7 @@ export default function PageNavigator({
   onPrevious = () => { },
   pageNum = 0
 }) {
-  
+
   const src = {
     upward: "/icons/upwardArrow.png",
     downward: "/icons/downwardArrow.png"
@@ -19,7 +19,7 @@ export default function PageNavigator({
       pageNum > 0 && pageNum < pageArr.length && <Image width={100} height={100} src={src.upward} onClick={onNext} />
     }
     {
-      pageNum < pageArr.length-1 && <Image width={100} height={100} src={src.downward} onClick={onPrevious} />
+      pageNum < pageArr.length - 1 && <Image width={100} height={100} src={src.downward} onClick={onPrevious} />
     }
   </div>
 }
