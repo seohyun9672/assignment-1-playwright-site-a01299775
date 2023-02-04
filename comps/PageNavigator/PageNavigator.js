@@ -1,36 +1,25 @@
+import Image from "next/image";
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react";
+import { pageArr } from "../../data/pagedata";
 
-export default function PageNavigator() {
-
-  const [page, setPage] = useState("home");
-  const [pageNum, setPageNum] = useState(0);
-
-  useEffect(() => {
-    setPageNum();
-  }, [])
-
+export default function PageNavigator({
+  onNext = () => { },
+  onPrevious = () => { },
+  pageNum = 0
+}) {
+  
   const src = {
     upward: "/icons/upwardArrow.png",
     downward: "/icons/downwardArrow.png"
   };
 
-  function nextPage() {
-    pageNum + 1;
-  }
-
-  function previousPage() {
-    pageNum - 1;
-  }
-
-  const router = useRouter();
-
-  return <div className="icon-cont arrow">
+  return <div>
     {
-      page !== "home" && <img className="icon" src={src.upward} onClick={previousPage} />
+      pageNum > 0 && pageNum < pageArr.length && <Image width={100} height={100} src={src.upward} onClick={onNext} />
     }
     {
-      page !== "contact" && <img className="icon" src={src.downward} onClick={nextPage} />
+      pageNum < pageArr.length-1 && <Image width={100} height={100} src={src.downward} onClick={onPrevious} />
     }
   </div>
 }
