@@ -21,6 +21,7 @@ button {
   border-radius: 0.5rem;
   color: var(--primary-color);
   z-index: 1;
+  min-width: max-content;
 }
 
 button:hover {
@@ -38,6 +39,10 @@ h3,
 p {
   margin: 1.5rem 0;
   width: 100%;
+}
+
+li {
+  list-style: none;
 }
 
 .header {
@@ -70,4 +75,34 @@ p {
 .icon {
   width: 4rem;
   margin: 1rem;
+}
+
+.menu {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-image: url("../public/background-images/menuBackground.png");
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction:column;
+  padding: 2rem;
+}
+
+.close {
+  align-self: flex-start;
+  font-size: 10pt;
+}
+
+.close > h1 {
+  margin: inherit;
+}
+
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
 }
