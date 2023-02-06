@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { src } from "../../data/pagedata";
 
 export default function Menu() {
-  const src = { default: "/icons/menu-icon.png", expand: "/background-images/menuBackground.png" };
 
   const router = useRouter();
   const [open, setOpen] = useState(false);
@@ -18,7 +18,8 @@ export default function Menu() {
   }
 
   return <>
-    <Image width={50} height={50} onClick={expandMenu} src={src.default} alt="Menu icon" />
+    <Image width={50} height={50} onClick={expandMenu} src={src.menu.default} alt="Menu icon" />
+    <img className="icon" src={src.logo} />
     {
       open && <div className="menu">
         <div className="close" onClick={() => setOpen(false)}>
