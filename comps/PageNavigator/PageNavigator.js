@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { useRouter } from "next/router"
-import { useEffect, useState } from "react";
-import { pageArr } from "../../data/pagedata";
+import { use, useEffect, useState } from "react";
+import { pageArr, src } from "../../data/pagedata";
+import { useRouter } from "next/router";
 
 export default function PageNavigator({
   onNext = () => { },
@@ -9,17 +9,12 @@ export default function PageNavigator({
   pageNum = 0
 }) {
 
-  const src = {
-    upward: "/icons/upwardArrow.png",
-    downward: "/icons/downwardArrow.png"
-  };
-
-  return <div>
+  return <div className="page-navigator">
     {
-      pageNum > 0 && pageNum < pageArr.length && <Image width={100} height={100} src={src.upward} onClick={onNext} />
+      pageNum > 0 && pageNum < pageArr.length && <Image width={100} height={100} src={src.upward} onClick={onPrevious} alt="arrow icon upward" />
     }
     {
-      pageNum < pageArr.length - 1 && <Image width={100} height={100} src={src.downward} onClick={onPrevious} />
+      pageNum < pageArr.length - 1 && <Image width={100} height={100} src={src.downward} onClick={onNext} alt="arrow icon downward" />
     }
   </div>
 }

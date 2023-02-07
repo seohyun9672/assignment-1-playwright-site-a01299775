@@ -1,17 +1,12 @@
 import PageNavigator from "../PageNavigator/PageNavigator";
 import Menu from "../Menu/Menu";
+import { src, pageArr } from "../../data/pagedata";
 
 export default function Layout({ children }) {
-  const src = "/icons/graduation-hat.png";
-
   return <>
-    <div>
-      <div className="icon-cont">
-        <Menu />
-        <img className="icon" src={src} />
-      </div>
-      <main>{children}</main>
-      <PageNavigator />
+    <div className="icon-cont">
+      <Menu />
     </div>
+    <main>{children}</main>
   </>
 }
