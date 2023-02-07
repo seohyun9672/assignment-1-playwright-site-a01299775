@@ -4,9 +4,7 @@ import { src, pageArr } from "../../data/pagedata";
 
 export default function Layout({ children }) {
   return <>
-    <div className="icon-cont">
-      <Menu />
-    </div>
+    <Menu />
     <main>{children}</main>
   </>
 }

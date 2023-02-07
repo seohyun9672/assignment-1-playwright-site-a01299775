@@ -1,5 +1,7 @@
 export default function Button(
-  { text = "button text", handleClick = () => { } }
+  { text = "button text", handleClick = () => { }, href = "" }
 ) {
-  return <button onClick={handleClick}>{text}</button>
+  return <a href={href} >
+    <button onClick={handleClick}>{text}</button>
+  </a>
 }

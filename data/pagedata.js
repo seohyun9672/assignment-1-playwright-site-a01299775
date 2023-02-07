@@ -20,7 +20,9 @@ export const src = {
   upward: "/icons/upwardArrow.png",
   downward: "/icons/downwardArrow.png",
   logo: "/icons/graduation-hat.png",
-  menu: { default: "/icons/menu-icon.png", expand: "/background-images/menuBackground.png" }
+  menu: { default: "/icons/menu-icon.png", expand: "/background-images/menuBackground.png" },
+  left: "/icons/leftArrow.png",
+  right: "/icons/rightArrow.png",
 };
 
 export const words = [

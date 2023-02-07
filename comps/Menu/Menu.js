@@ -17,11 +17,11 @@ export default function Menu() {
     setOpen(false);
   }
 
-  return <>
-    <Image width={50} height={50} onClick={expandMenu} src={src.menu.default} alt="Menu icon" />
+  return <div className="menu">
+    <img className="icon" onClick={expandMenu} src={src.menu.default} alt="Menu icon" />
     <img className="icon" src={src.logo} />
     {
-      open && <div className="menu">
+      open && <div className="menu-expand">
         <div className="close" onClick={() => setOpen(false)}>
           <h1>X</h1>
         </div>
@@ -32,5 +32,5 @@ export default function Menu() {
         </ul>
       </div>
     }
-  </>
+  </div>
 }
